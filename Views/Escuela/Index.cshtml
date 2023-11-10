@@ -1,0 +1,13 @@
+@model Escuela // Esto tipa fuertemente al parámetro que se está pasando
+
+@{
+
+    ViewData["Title"] = "Información Escuela";
+}
+
+@ViewData["Title"]
+@ViewBag.CosaDinamica
+
+<h1>Escuela</h1>
+<h3>Nombre: @Model.Nombre</h3>
+<h3>Año de Fundación: @Model.AñoFundacion</h3>
