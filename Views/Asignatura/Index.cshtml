@@ -1,0 +1,24 @@
+@model List<Asignatura>
+
+@{
+    ViewData["Title"] = "Información Asignatura";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="object-container">
+                @foreach(Asignatura asignatura in Model)
+                {
+                    <div class="object">
+                        <h3>@asignatura.Nombre</h3>
+                        <address>
+                            <partial name="Objeto" model="asignatura" />
+                        </address>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

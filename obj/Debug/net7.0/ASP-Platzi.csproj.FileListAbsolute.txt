@@ -29,3 +29,4 @@
 /home/sedron/Documentos/Cursos/ASP-Platzi/obj/Debug/net7.0/ASP-Platzi.pdb
 /home/sedron/Documentos/Cursos/ASP-Platzi/obj/Debug/net7.0/ASP-Platzi.genruntimeconfig.cache
 /home/sedron/Documentos/Cursos/ASP-Platzi/obj/Debug/net7.0/ref/ASP-Platzi.dll
+/home/sedron/Documentos/Cursos/ASP-Platzi/obj/Debug/net7.0/scopedcss/Views/Shared/Objeto.cshtml.rz.scp.css

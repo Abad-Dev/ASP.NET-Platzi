@@ -8,6 +8,12 @@
 @ViewData["Title"]
 @ViewBag.CosaDinamica
 
-<h1>Escuela</h1>
-<h3>Nombre: @Model.Nombre</h3>
-<h3>Año de Fundación: @Model.AñoFundacion</h3>
+<h1>@Model.Nombre Scool</h1>
+<address>
+    <partial name="Objeto" />
+    <p>Tipo de escuela: @Model.TipoEscuela</p>
+    <p>Año de Fundación: @Model.AñoDeCreación</p>
+    <p>Dirección: @Model.Dirección</p>
+    <p>País: @Model.Pais</p>
+    <p>Ciudad: @Model.Ciudad</p>
+</address>

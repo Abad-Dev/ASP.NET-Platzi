@@ -8,10 +8,13 @@ public class EscuelaController : Controller
     public IActionResult Index()
     {
         Escuela escuela1 = new()
-        {
-            AñoFundacion = 2005,
-            EscuelaId = Guid.NewGuid().ToString(),
-            Nombre = "Platzi School"
+        {   
+            Nombre = "Platzi",
+            Ciudad = "Bogotá",
+            Pais = "Colombia",
+            Dirección = "Av. Quienque 356",
+            AñoDeCreación = 2005,
+            TipoEscuela = TiposEscuela.Secundaria
         };
 
         ViewBag.CosaDinamica = "Dinamismo"; // Sirve para mandar datos dinámicos, se envía automáticamente
