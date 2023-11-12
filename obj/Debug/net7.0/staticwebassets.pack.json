@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/ASP-Platzi.bundle.scp.css"
     },
     {
+      "Id": "/home/sedron/Documentos/Cursos/ASP-Platzi/wwwroot/ASP_Platzi.styles.css",
+      "PackagePath": "staticwebassets/ASP_Platzi.styles.css"
+    },
+    {
       "Id": "/home/sedron/Documentos/Cursos/ASP-Platzi/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },

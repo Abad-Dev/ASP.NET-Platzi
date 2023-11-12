@@ -1,7 +1,7 @@
-@model List<Asignatura>
+@model List<Alumno>
 
 @{
-    string WindowName = "Asignaturas";
+    string WindowName = "Alumnos";
     ViewData["Title"] = "Información " + WindowName;
 }
 
@@ -14,12 +14,11 @@
         </div>
         <div class="col-12">
             <div class="object-container">
-                @foreach(Asignatura asignatura in Model)
+                @foreach(Alumno alumno in Model)
                 {
                     <div class="object">
-                        <h3>@asignatura.Nombre</h3>
                         <address>
-                            <partial name="Objeto" model="asignatura" />
+                            <partial name="Objeto" model="alumno" />
                         </address>
                     </div>
                 }

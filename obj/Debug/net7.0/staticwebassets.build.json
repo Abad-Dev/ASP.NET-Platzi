@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RlHhgIULNt/DMVD1Wr3LCgkbDkDv73MNchnQLhIs6U4=",
+  "Hash": "7D5GNfsgMY7nM9EnpKZH5+ZBbTIugkKxfqS1jVnu7Q0=",
   "Source": "ASP-Platzi",
   "BasePath": "_content/ASP-Platzi",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/home/sedron/Documentos/Cursos/ASP-Platzi/obj/Debug/net7.0/scopedcss/projectbundle/ASP-Platzi.bundle.scp.css"
+    },
+    {
+      "Identity": "/home/sedron/Documentos/Cursos/ASP-Platzi/wwwroot/ASP_Platzi.styles.css",
+      "SourceId": "ASP-Platzi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/sedron/Documentos/Cursos/ASP-Platzi/wwwroot/",
+      "BasePath": "_content/ASP-Platzi",
+      "RelativePath": "ASP_Platzi.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/ASP_Platzi.styles.css"
     },
     {
       "Identity": "/home/sedron/Documentos/Cursos/ASP-Platzi/wwwroot/css/site.css",
