@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using ASP_Platzi.Models;
 using ASP_Platzi.Context;
@@ -13,19 +14,17 @@ public class EscuelaController : Controller
     }
     public IActionResult Index()
     {
-        _context.Database.EnsureCreated();
-        Escuela escuela1 = new()
-        {   
-            Nombre = "Platzi",
-            Ciudad = "Bogotá",
-            Pais = "Colombia",
-            Dirección = "Av. Quienque 356",
-            AñoDeCreación = 2005,
-            TipoEscuela = TiposEscuela.Secundaria
-        };
+        Escuela escuela1 = _context.Escuelas.FirstOrDefault();
 
-        ViewBag.CosaDinamica = "Dinamismo"; // Sirve para mandar datos dinámicos, se envía automáticamente
-        
+        _context.Cursos.Add(new Curso
+        {
+            Jornada = TiposJornada.Mañana,
+            Escuela = escuela1,
+            Nombre = "Programación"
+        });
+
+        _context.SaveChanges();
+
         return View(escuela1);
     }
 }
