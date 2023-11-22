@@ -13,7 +13,6 @@ public class EscuelaController : Controller
     }
     public IActionResult Index()
     {
-        _context.Database.EnsureCreated();
         Escuela escuela1 = _context.Escuelas.FirstOrDefault();
 
         return View(escuela1);

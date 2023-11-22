@@ -5,6 +5,9 @@
 }
 
 <h1>@Model.Nombre</h1>
+<hr>
 <address>
     <partial name="Objeto" />
+    <p>Curso: @Model.Curso.Nombre</p>
+    <p>Escuela: @Model.Curso.Escuela.Nombre</p>
 </address>

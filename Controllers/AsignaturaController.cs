@@ -1,31 +1,36 @@
 using Microsoft.AspNetCore.Mvc;
 using ASP_Platzi.Models;
+using ASP_Platzi.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace ASP_Platzi.Controllers;
 
 public class AsignaturaController : Controller
 {
+    private EscuelaContext _context;
+    public AsignaturaController(EscuelaContext context)
+    {
+        _context = context;
+    }
     public IActionResult Index()
     {
-        List<Asignatura> listaAsignaturas = new () {
-            new Asignatura { Nombre = "Matemáticas" },
-            new Asignatura { Nombre = "Educación Física" },
-            new Asignatura { Nombre = "Castellano" },
-            new Asignatura { Nombre = "Ciencias Naturales" },
-            new Asignatura { Nombre = "Programacion" }
-        };
-
-        ViewBag.CosaDinamica = "Dinamismo"; // Sirve para mandar datos dinámicos, se envía automáticamente
-        
+        List<Asignatura> listaAsignaturas = _context.Asignaturas.ToList();
         return View(listaAsignaturas);
     }
 
-    public IActionResult Single()
+    [Route("Asignatura/Single/{AsignaturaId}")]
+    public IActionResult Single(string AsignaturaId)
     {
-        Asignatura asignatura1 = new()
-        {   
-            Nombre = "Matemáticas",
-        };
-        return View(asignatura1);
+        Asignatura asignatura = _context.Asignaturas
+        .Where(p => p.Id == AsignaturaId)
+        .Include(p => p.Curso)
+        .ThenInclude(p => p.Escuela)
+        .SingleOrDefault();
+        if (asignatura != null)
+        {
+            return View(asignatura);
+        } else{
+            return View("Error");
+        }
     }
 }

@@ -16,7 +16,26 @@ public class CursoController : Controller
     {
         // Importante el método Include, sino devuelve null
         List<Curso> Cursos = _context.Cursos.Include(p => p.Escuela).ToList();
-        
+
         return View(Cursos);
+    }
+
+    [Route("Curso/Single/{CursoId}")]
+    public IActionResult Single(string CursoId)
+    {
+        Curso curso = _context.Cursos
+            .Where(p => p.Id == CursoId)
+            .Include(p => p.Escuela)
+            .Include(p => p.Inscripciones)
+            .ThenInclude(p => p.Alumno)
+            .SingleOrDefault();
+        if (curso != null)
+        {
+            return View(curso);
+        } else
+        {
+            return View("Error");
+        }
+
     }
 }

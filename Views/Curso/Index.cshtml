@@ -13,25 +13,28 @@
             </h1>
         </div>
         <div class="col-12">
+            
             <div class="object-container">
                 @foreach(Curso Curso in Model)
                 {
-                    <div class="object">
-                        <h3>@Curso.Nombre</h3>
-                        <address>
-                            <partial name="Objeto" model="Curso" />
-                            <p>
-                                @if (Curso.Escuela != null)
-                                {
-                                    <text>Escuela: @Curso.Escuela.Nombre</text>
-                                }
-                                else
-                                {
-                                    <text>Escuela no asignada</text>
-                                }
-                            </p>
-                        </address>
-                    </div>
+                    <a asp-controller="Curso" asp-action="Single" asp-route-id="@Curso.Id">
+                        <div class="object">
+                            <h3>@Curso.Nombre</h3>
+                            <address>
+                                <partial name="Objeto" model="Curso" />
+                                <p>
+                                    @if (Curso.Escuela != null)
+                                    {
+                                        <text>Escuela: @Curso.Escuela.Nombre</text>
+                                    }
+                                    else
+                                    {
+                                        <text>Escuela no asignada</text>
+                                    }
+                                </p>
+                            </address>
+                        </div>
+                    </a>
                 }
             </div>
         </div>

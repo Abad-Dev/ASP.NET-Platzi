@@ -1,19 +1,19 @@
 using Microsoft.AspNetCore.Mvc;
 using ASP_Platzi.Models;
+using ASP_Platzi.Context;
 
 namespace ASP_Platzi.Controllers;
 
 public class AlumnoController : Controller
 {
+    private EscuelaContext _context;
+    public AlumnoController(EscuelaContext context)
+    {
+        _context = context;
+    }
     public IActionResult Index()
     {
-        List<Alumno> listaAlumnos = new () {
-            new Alumno { Nombre = "Luis" },
-            new Alumno { Nombre = "Alberto" },
-            new Alumno { Nombre = "José" },
-            new Alumno { Nombre = "Pedro" },
-            new Alumno { Nombre = "Francisco" }
-        };
+        List<Alumno> listaAlumnos = _context.Alumnos.ToList();
         
         return View(listaAlumnos);
     }

@@ -16,12 +16,14 @@
             <div class="object-container">
                 @foreach(Asignatura asignatura in Model)
                 {
-                    <div class="object">
-                        <h3>@asignatura.Nombre</h3>
-                        <address>
-                            <partial name="Objeto" model="asignatura" />
-                        </address>
-                    </div>
+                    <a asp-controller="Asignatura" asp-action="Single" asp-route-id="@asignatura.Id">
+                        <div class="object">
+                            <h3>@asignatura.Nombre</h3>
+                            <address>
+                                <partial name="Objeto" model="asignatura" />
+                            </address>
+                        </div>
+                    </a>
                 }
             </div>
         </div>
