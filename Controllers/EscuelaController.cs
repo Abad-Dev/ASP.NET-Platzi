@@ -1,4 +1,3 @@
-using System;
 using Microsoft.AspNetCore.Mvc;
 using ASP_Platzi.Models;
 using ASP_Platzi.Context;
@@ -14,16 +13,8 @@ public class EscuelaController : Controller
     }
     public IActionResult Index()
     {
+        _context.Database.EnsureCreated();
         Escuela escuela1 = _context.Escuelas.FirstOrDefault();
-
-        _context.Cursos.Add(new Curso
-        {
-            Jornada = TiposJornada.Mañana,
-            Escuela = escuela1,
-            Nombre = "Programación"
-        });
-
-        _context.SaveChanges();
 
         return View(escuela1);
     }

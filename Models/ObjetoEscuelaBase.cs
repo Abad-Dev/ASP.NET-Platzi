@@ -1,20 +1,18 @@
-using System;
-
 namespace ASP_Platzi.Models
 {
     public abstract class ObjetoEscuelaBase
     {
-        public string UniqueId { get; private set; }
+        public string Id { get; private set; }
         public string Nombre { get; set; }
 
         public ObjetoEscuelaBase()
         {
-            UniqueId = Guid.NewGuid().ToString();
+            Id = Guid.NewGuid().ToString();
         }
 
         public override string ToString()
         {
-            return $"{Nombre},{UniqueId}";
+            return $"{Nombre},{Id}";
         }
     }
 }

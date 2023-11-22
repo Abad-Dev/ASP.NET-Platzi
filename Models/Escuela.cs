@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace ASP_Platzi.Models
 {
     public class Escuela:ObjetoEscuelaBase
@@ -14,10 +11,5 @@ namespace ASP_Platzi.Models
 
         public TiposEscuela TipoEscuela { get; set; }
         public List<Curso> Cursos { get; set; }
-
-        public override string ToString()
-        {
-            return $"Nombre: \"{Nombre}\", Tipo: {TipoEscuela} {System.Environment.NewLine} Pais: {Pais}, Ciudad:{Ciudad}";
-        }
     }
 }

@@ -1,0 +1,40 @@
+@model List<Curso>
+
+@{
+    string WindowName = "Cursos";
+    ViewData["Title"] = "Información " + WindowName;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">
+                @WindowName
+            </h1>
+        </div>
+        <div class="col-12">
+            <div class="object-container">
+                @foreach(Curso Curso in Model)
+                {
+                    <div class="object">
+                        <h3>@Curso.Nombre</h3>
+                        <address>
+                            <partial name="Objeto" model="Curso" />
+                            <p>
+                                @if (Curso.Escuela != null)
+                                {
+                                    <text>Escuela: @Curso.Escuela.Nombre</text>
+                                }
+                                else
+                                {
+                                    <text>Escuela no asignada</text>
+                                }
+                            </p>
+                        </address>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
