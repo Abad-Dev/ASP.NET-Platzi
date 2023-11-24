@@ -38,4 +38,21 @@ public class CursoController : Controller
         }
 
     }
+
+
+    public IActionResult Create()
+    {
+        List<Escuela> Escuelas = _context.Escuelas.ToList();
+        ViewBag.Escuelas = Escuelas;
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Create(Curso curso)
+    {
+        _context.Cursos.Add(curso);
+        _context.SaveChanges();
+
+        return RedirectToAction("Index");
+    }
 }

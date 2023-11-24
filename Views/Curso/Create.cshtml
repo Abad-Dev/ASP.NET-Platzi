@@ -1,0 +1,29 @@
+@model Curso
+
+<form method="POST">
+    <div>
+        <label asp-for="Nombre">Nombre:</label>
+        <input asp-for="Nombre" class="form-control"/>
+    </div>
+
+    <div>
+        <label asp-for="Jornada">Jornada:</label>
+        @Html.DropDownList(
+            "Jornada", // Campo del modelo
+            Html.GetEnumSelectList<TiposJornada>(),
+            "Seleccione Jornada", // Texto por defecto,
+            new {@class = "form-control"} // Estilos
+        )
+    </div>
+
+    <div>
+        <label asp-for="Escuela">Escuela:</label>
+        <select asp-for="EscuelaId" class="form-control">
+            @foreach(Escuela escuela in ViewBag.Escuelas)
+            {
+                <option value="@escuela.Id">@escuela.Nombre</option>        
+            }
+        </select>
+    </div>
+    <input type="submit" class="btn btn-primary mt-2">
+</form>

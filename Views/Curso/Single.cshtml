@@ -2,7 +2,13 @@
 
 <h1>@Model.Nombre</h1>
 <hr>
-<h2>Escuela: @Model.Escuela.Nombre</h2>
+@if (@Model.Escuela != null)
+{
+    <h4>Escuela: @Model.Escuela.Nombre</h4>
+} else {
+    <h4>Escuela no asignada</h4>
+}
+<h4>Turno: @Model.Jornada</h4>
 <p>Alumnos Matriculados:</p>
 <ul>
     @foreach (Inscripcion inscripcion in Model.Inscripciones)
