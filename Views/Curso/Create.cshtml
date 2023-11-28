@@ -1,6 +1,8 @@
 @model Curso
 
+
 <form method="POST">
+    <div asp-validation-summary="All"></div>
     <div>
         <label asp-for="Nombre">Nombre:</label>
         <input asp-for="Nombre" class="form-control"/>

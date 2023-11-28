@@ -50,9 +50,17 @@ public class CursoController : Controller
     [HttpPost]
     public IActionResult Create(Curso curso)
     {
-        _context.Cursos.Add(curso);
-        _context.SaveChanges();
+        List<Escuela> Escuelas = _context.Escuelas.ToList();
+        ViewBag.Escuelas = Escuelas;
 
-        return RedirectToAction("Index");
+        if (ModelState.IsValid)
+        {
+            _context.Cursos.Add(curso);
+            _context.SaveChanges();
+            return RedirectToAction("Single", "Curso", new {id=curso.Id});
+        } else {
+            return View(curso);
+        }
+
     }
 }

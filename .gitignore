@@ -62,6 +62,8 @@ Thumbs.db
 [Oo]bj
 .obj/*
 obj/*
+obj
+./obj
 [Tt]est[Rr]esults
 *.suo
 *.user
