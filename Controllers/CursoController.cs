@@ -61,6 +61,5 @@ public class CursoController : Controller
         } else {
             return View(curso);
         }
-
     }
 }

@@ -33,4 +33,29 @@ public class AsignaturaController : Controller
             return View("Error");
         }
     }
+
+    public IActionResult Create()
+    {
+        List<Curso> Cursos = _context.Cursos.ToList();
+        ViewBag.Cursos = Cursos;
+
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Create(Asignatura asignatura)
+    {
+        List<Curso> Cursos = _context.Cursos.ToList();
+        ViewBag.Cursos = Cursos;
+
+        if (ModelState.IsValid)
+        {
+            _context.Asignaturas.Add(asignatura);
+            _context.SaveChanges();
+            return RedirectToAction("Single", "Asignatura", new {id=asignatura.Id});
+        } else {
+            return View(asignatura);
+        }
+
+    }
 }

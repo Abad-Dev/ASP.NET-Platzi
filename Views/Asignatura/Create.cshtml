@@ -1,0 +1,21 @@
+@model Asignatura
+
+
+<form method="POST">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Nombre">Nombre:</label>
+        <input asp-for="Nombre" class="form-control"/>
+    </div>
+
+    <div>
+        <label asp-for="Curso">Curso:</label>
+        <select asp-for="CursoId" class="form-control">
+            @foreach(Curso Curso in ViewBag.Cursos)
+            {
+                <option value="@Curso.Id">@Curso.Nombre</option>        
+            }
+        </select>
+    </div>
+    <input type="submit" class="btn btn-primary mt-2">
+</form>

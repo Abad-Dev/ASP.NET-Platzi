@@ -1,0 +1,11 @@
+@model Alumno
+
+
+<form method="POST">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Nombre">Nombre:</label>
+        <input asp-for="Nombre" class="form-control"/>
+    </div>
+    <input type="submit" class="btn btn-primary mt-2">
+</form>

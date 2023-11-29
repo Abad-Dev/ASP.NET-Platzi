@@ -1,0 +1,44 @@
+@model Alumno
+
+
+<div class="container">
+    <h1>@Model.Nombre</h1>
+
+    <h5>Cursos Inscrito:</h5>
+    @foreach (Inscripcion inscripcion in ViewBag.Inscripciones)
+    {
+        <p>- @inscripcion.Curso.Nombre</p>
+    }
+
+    <hr>
+
+    <h3>Inscribirse a un Nuevo Curso:</h3>
+    <div class="row">
+        <div class="col-12">
+            <div class="object-container">
+                @foreach (Curso curso in ViewBag.Cursos)
+                {
+                    <a href="@Url.Action("Inscribir", "Alumno", new { cursoId = curso.Id, alumnoId = Model.Id })">
+                        <div class="object">
+                            <h3>@curso.Nombre</h3>
+                            <address>
+                                <partial name="Objeto" model="curso" />
+                                <p>
+                                    @if (curso.Escuela != null)
+                                    {
+                                        <text>Escuela: @curso.Escuela.Nombre</text>
+                                    }
+                                    else
+                                    {
+                                        <text>Escuela no asignada</text>
+                                    }
+                                </p>
+                            </address>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+    
+</div>

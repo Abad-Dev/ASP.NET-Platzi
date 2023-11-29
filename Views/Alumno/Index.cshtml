@@ -16,13 +16,24 @@
             <div class="object-container">
                 @foreach(Alumno alumno in Model)
                 {
-                    <div class="object">
-                        <address>
-                            <partial name="Objeto" model="alumno" />
-                        </address>
-                    </div>
+                    <a asp-controller="Alumno" asp-action="Single" asp-route-id="@alumno.Id">
+                        <div class="object">
+                            <address>
+                                <partial name="Objeto" model="alumno" />
+                            </address>
+                        </div>
+                    </a>
                 }
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <a asp-action="Create">
+                <button class="btn btn-outline-dark">
+                    + Crear un nuevo Alumno
+                </button>
+            </a>
         </div>
     </div>
 </div>
