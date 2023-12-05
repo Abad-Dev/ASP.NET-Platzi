@@ -56,6 +56,21 @@ public class AsignaturaController : Controller
         } else {
             return View(asignatura);
         }
+    }
 
+    [HttpPost] 
+    [Route("Asignatura/Delete/{AsignaturaId}")]
+    public IActionResult Delete(string AsignaturaId)
+    {
+        Asignatura asignatura = _context.Asignaturas.Where(p => p.Id == AsignaturaId).SingleOrDefault();
+        if (asignatura != null)
+        {
+            _context.Asignaturas.Remove(asignatura);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Asignatura");
+        } else
+        {
+            return NotFound();
+        }
     }
 }

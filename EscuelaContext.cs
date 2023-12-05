@@ -14,7 +14,7 @@ public class EscuelaContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseMySQL("Server=;Database=;Uid=;Pwd=;");
+        optionsBuilder.UseMySQL("Server=70.32.23.64;Database=limamenus_asp;Uid=limamenus_asp;Pwd=Diego5147;");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -10,4 +10,8 @@
     <partial name="Objeto" />
     <p>Curso: @Model.Curso.Nombre</p>
     <p>Escuela: @Model.Curso.Escuela.Nombre</p>
+
+    <form method="POST" action="/Asignatura/Delete/@Model.Id">
+        <button class="btn btn-danger" type="submit">Eliminar</button>
+    </form>
 </address>
