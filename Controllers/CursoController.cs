@@ -39,7 +39,6 @@ public class CursoController : Controller
 
     }
 
-
     public IActionResult Create()
     {
         List<Escuela> Escuelas = _context.Escuelas.ToList();
@@ -60,6 +59,22 @@ public class CursoController : Controller
             return RedirectToAction("Single", "Curso", new {id=curso.Id});
         } else {
             return View(curso);
+        }
+    }
+
+    [HttpPost] // Tiene que ser un post para que el form, que solo invoca posts, pueda invocar esta funcion 
+    [Route("Curso/Delete/{CursoId}")]
+    public IActionResult Delete(string CursoId)
+    {
+        Curso Curso = _context.Cursos.Where(p => p.Id == CursoId).SingleOrDefault();
+        if (Curso != null)
+        {
+            _context.Cursos.Remove(Curso);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Curso");
+        } else
+        {
+            return NotFound();
         }
     }
 }
