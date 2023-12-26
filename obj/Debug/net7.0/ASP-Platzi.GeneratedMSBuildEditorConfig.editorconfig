@@ -20,6 +20,18 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWx1bW5vL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/sedron/Documentos/Cursos/ASP-Platzi/Views/Alumno/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWx1bW5vL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/sedron/Documentos/Cursos/ASP-Platzi/Views/Alumno/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWx1bW5vL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/sedron/Documentos/Cursos/ASP-Platzi/Views/Alumno/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWx1bW5vL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/sedron/Documentos/Cursos/ASP-Platzi/Views/Alumno/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWx1bW5vL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

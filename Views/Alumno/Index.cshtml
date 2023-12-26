@@ -1,40 +1,35 @@
-@model List<Alumno>
+@model IEnumerable<ASP_Platzi.Models.Alumno>
 
 @{
-    string WindowName = "Alumnos";
-    ViewData["Title"] = "Información " + WindowName;
+    ViewData["Title"] = "Index";
 }
 
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <h1 class="text-center">
-                @WindowName
-            </h1>
-        </div>
-        <div class="col-12">
-            <div class="object-container">
-                @foreach(Alumno alumno in Model)
-                {
-                    <a asp-controller="Alumno" asp-action="Single" asp-route-id="@alumno.Id">
-                        <div class="object">
-                            <address>
-                                <partial name="Objeto" model="alumno" />
-                            </address>
-                        </div>
-                    </a>
-                }
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <a asp-action="Create">
-                <button class="btn btn-outline-dark">
-                    + Crear un nuevo Alumno
-                </button>
-            </a>
-        </div>
-    </div>
-</div>
+<h1>Index</h1>
 
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
